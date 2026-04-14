@@ -93,5 +93,4 @@ crew = Crew(
 )
 
 resultado = crew.kickoff()
-
 print("\nResposta final:\n", resultado)
