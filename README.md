@@ -88,14 +88,80 @@ pip install keyring
 import keyring
 keyring.set_password("openai", "api_key", "SUA_OPENAI_API_KEY")
 exit()
+```
+---
+
 
 ## ▶️ Executar
+```
+## Rodar 
 python main.py
 
-## 💬 Exemplo de pergunta
+## 💬 Exemplo de atendimento
+
+# Entrada (INPUT)
 Pergunta do usuário: Política de Compras e Suprimentos
+
+# Saída (Output)
+"A Política de Compras e Suprimentos define os critérios para a seleção de fornecedores, estabelecendo
+que é necessário obter, no mínimo, três orçamentos. Além disso, a política inclui a realização de uma 
+análise de risco (due diligence) para garantir a segurança e a conformidade das aquisições realizadas.
+Essas diretrizes visam assegurar transparência, eficiência e responsabilidade nas compras da organização."
 ```
---- 
+---
+
+## 🧠 Destaque do Exemplo
+
+Este exemplo demonstra:
+
+- ✔️ Relação clara entre entrada (input) e saída (output)  
+- ✔️ Execução real do sistema em ambiente controlado  
+- ✔️ Uso de grounding com base de conhecimento local  
+- ✔️ Geração de respostas contextualizadas e confiáveis  
+
+👉 Exemplo baseado em execução real utilizando a base de conhecimento interna do projeto.
+
+---
+
+## 🎯 Objetivo do Projeto
+
+A evolução do projeto visa sair de uma base estática (FAQ em texto) para uma arquitetura escalável baseada em RAG, simulando cenários reais de uso corporativo com grandes volumes de dados.
+
+## 🚀 Evolução do Projeto (Roadmap)
+
+### ✅ Versão 1 - FAQ (TXT)
+- Base de conhecimento em arquivo `.txt`
+- Grounding simples com contexto estático
+- Arquitetura multi-agente com CrewAI
+- Separação de responsabilidades (Atendente, Pesquisador, Respondedor)
+- Foco em estrutura, orquestração e funcionamento do fluxo
+
+---
+
+### 🔜 Versão 2 - RAG com PDFs
+- Ingestão de documentos PDF (ex: políticas, relatórios, normas)
+- Processamento e chunking de documentos
+- Vetorização com embeddings
+- Busca semântica (Retrieval-Augmented Generation)
+- Respostas baseadas em contexto dinâmico
+- Escalabilidade para bases maiores e cenários corporativos
+
+---
+
+### 🔜 Versão 3 - Guardrails e Redução de Alucinação
+- Respostas restritas ao contexto recuperado
+- Fallback para perguntas fora da base ("informação não encontrada")
+- Engenharia de prompts com regras mais rígidas
+- Citação da fonte utilizada na resposta
+- Score de confiança da resposta (alta/média/baixa)
+- Avaliação automática de qualidade das respostas
+- Logs e observabilidade (erros, falhas e inconsistências)
+
+🚧 Projeto em evolução contínua: V2 (RAG com PDFs) e V3 (Guardrails e avaliação) em desenvolvimento.
+
+---
+
+
 ## 👨‍💻 Autor
 
 Gabriel Belmiro 🔗 https://www.linkedin.com/in/gabriel-belmiro/
