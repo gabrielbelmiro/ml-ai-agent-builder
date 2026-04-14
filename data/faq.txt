@@ -1,0 +1,38 @@
+1. Código de Ética e Conduta
+Este documento define a identidade moral da organização e o que se espera do comportamento dos colaboradores.
+
+Integridade e Honestidade: Compromisso de agir com transparência em todas as interações profissionais, evitando qualquer forma de fraude ou enganação.
+
+Respeito e Diversidade: Proibição estrita de qualquer forma de discriminação, assédio (moral ou sexual) ou bullying, promovendo um ambiente inclusivo.
+
+Conflito de Interesses: Regras sobre situações em que interesses pessoais podem colidir com os da empresa (ex: contratar parentes sem processo seletivo ou aceitar presentes de fornecedores).
+
+Confidencialidade: Dever de proteger informações sigilosas da empresa, de clientes e de parceiros comerciais, mesmo após o desligamento.
+
+Uso Responsável dos Ativos: Diretriz sobre o uso correto dos equipamentos, softwares e recursos financeiros da empresa apenas para fins profissionais.
+
+2. Políticas e Procedimentos Internos
+São as regras operacionais que ditam "como" o trabalho deve ser feito para garantir padronização e segurança.
+
+Política de Compras e Suprimentos: Define os critérios para seleção de fornecedores, exigindo no mínimo três orçamentos e análise de risco (due diligence).
+
+Segurança da Informação: Regras para criação de senhas, uso de VPN, bloqueio de telas e níveis de acesso a dados sensíveis (alinhado à LGPD).
+
+Política de Reembolso de Despesas: Estabelece os limites de gastos com viagens, alimentação e transporte, e o fluxo necessário para a prestação de contas.
+
+Procedimento de Recrutamento e Seleção: Normas que garantem que as contratações sejam baseadas em mérito e competência técnica, com etapas auditáveis.
+
+Política de Comunicação Externa: Define quem são os porta-vozes autorizados a falar em nome da empresa para a imprensa ou em redes sociais.
+
+3. Relatórios de Auditoria
+Diferente dos anteriores, o relatório é o resultado da verificação. Ele se baseia em princípios de controle para validar se as "leis" acima estão sendo cumpridas.
+
+Verificação de Conformidade (Compliance): Análise se os processos executados estão de acordo com as leis externas e políticas internas.
+
+Avaliação de Controles Internos: Teste da eficácia dos mecanismos de segurança (ex: conferir se apenas pessoas autorizadas aprovam pagamentos).
+
+Identificação de Riscos e Fragilidades: Apontamento de brechas que podem gerar prejuízos financeiros, operacionais ou de imagem.
+
+Evidenciação de Achados: Exigência de que toda falha encontrada seja baseada em fatos e dados comprováveis (notas fiscais, logs de sistema, e-mails).
+
+Plano de Ação e Follow-up: Determinação de prazos e responsáveis para corrigir as irregularidades detectadas durante a inspeção.
