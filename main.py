@@ -2,7 +2,7 @@
 import os
 from config.settings import settings
 
-# CiberSecurity: Definir ambiente ANTES de importar os agents / crewai
+# CyberSecurity: Definir ambiente ANTES de importar os agents / crewai
 os.environ["OPENAI_API_KEY"] = settings.OPENAI_API_KEY
 os.environ["OPENAI_MODEL_NAME"] = "gpt-4o-mini"
 
