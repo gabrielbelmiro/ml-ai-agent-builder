@@ -11,8 +11,10 @@ from agents.resposta import create_resposta_agent
 # V1 - FAQ
 from tools.faq_tool import buscar_faq
 
-# V2 - RAG
+# V2/V3 - RAG
 from rag.retriever import get_retriever
+from rag.guardrails import validate_context, FALLBACK_MESSAGE
+from rag.formatter import extract_sources, confidence_score
 
 
 # CONFIGURAÇÃO DE MODO
@@ -30,7 +32,11 @@ responder = create_resposta_agent()
 pergunta = input("Pergunta do usuário: ")
 
 
-# CONTEXTO (V1 vs V2)
+# CONTEXTO (V1 vs V2/V3)
+docs = []
+fontes = ""
+score = "baixa"
+
 if MODO == "faq":
     contexto = buscar_faq(pergunta)
 
@@ -38,13 +44,23 @@ elif MODO == "rag":
     retriever = get_retriever()
     docs = retriever.invoke(pergunta)
 
+    # Reduzir ruido do RAG: se não houver documentos, contexto vazio. Se houver, extrair apenas o conteúdo relevante.
+    docs = docs[:1]  # Limitar a 1 documento para reduzir ruido em leis e normas, mas pode ser ajustado para 2 ou 3 dependendo do caso.
+
     if not docs:
-        contexto = "Não encontrei essa informação na base de conhecimento. Poderia fornecer mais detalhes ou reformular a pergunta?"
+        contexto = ""
     else:
         contexto = "\n".join(doc.page_content for doc in docs)
 
+    # Guardrail: valida se existe contexto aproveitável
+    if not validate_context(contexto):
+        contexto = ""
+    else:
+        fontes = extract_sources(docs)
+        score = confidence_score(docs)
+
 else:
-    contexto = "Modo inválido. Use 'faq' ou 'rag'."
+    contexto = ""
 
 
 # TASKS
@@ -57,29 +73,44 @@ task1 = Task(
 
 task2 = Task(
     description=f"""
-Use apenas o contexto abaixo para responder:
+Use apenas o contexto abaixo para responder à pergunta do usuário.
 
-{contexto}
+Pergunta:
+{pergunta}
+
+Contexto:
+{contexto if contexto else FALLBACK_MESSAGE}
+
+Regras:
+- Responda apenas com base no contexto fornecido.
+- Se a informação não estiver no contexto, responda exatamente:
+"{FALLBACK_MESSAGE}"
+- Não utilize conhecimento externo.
 """,
-    expected_output="Resposta baseada exclusivamente no contexto.",
+    expected_output="Resposta baseada exclusivamente no contexto ou fallback.",
     agent=pesquisador
 )
 
 task3 = Task(
     description=f"""
-Responda a pergunta com base apenas no contexto.
+Responda à pergunta com base apenas no contexto abaixo.
 
-Pergunta: {pergunta}
+Pergunta:
+{pergunta}
 
 Contexto:
-{contexto}
+{contexto if contexto else FALLBACK_MESSAGE}
 
 Regras:
-- Não inventar
-- Não usar conhecimento externo
-- Se não encontrar, diga que não encontrou
+- Use APENAS informações presentes no contexto.
+- Responda em no máximo 2 frases.
+- NÃO adicione explicações extras.
+- NÃO interprete ou complemente o conteúdo.
+- Responda de forma objetiva, preferencialmente reutilizando o texto do contexto.
+- Se a informação não estiver presente, responda exatamente:
+"{FALLBACK_MESSAGE}"
 """,
-    expected_output="Resposta clara e fiel ao contexto.",
+    expected_output="Resposta direta baseada no contexto, sem adição de conteúdo externo.",
     agent=responder
 )
 
@@ -93,4 +124,12 @@ crew = Crew(
 )
 
 resultado = crew.kickoff()
-print("\nResposta final:\n", resultado)
+
+
+# SAÍDA FINAL CONTROLADA
+if not contexto:
+    print("\nResposta final:\n", FALLBACK_MESSAGE)
+else:
+    print("\nResposta final:\n", resultado)
+    print(f"\nFonte: {fontes}")
+    print(f"Confiança: {score}")
