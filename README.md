@@ -104,13 +104,10 @@ python main.py
 ## 💬 Exemplo de atendimento
 
 # Entrada (INPUT)
-Pergunta do usuário: Política de Compras e Suprimentos
+Pergunta do usuário: Politica de Controle de acesso
 
 # Saída (Output)
-"A Política de Compras e Suprimentos define os critérios para a seleção de fornecedores, estabelecendo
-que é necessário obter, no mínimo, três orçamentos. Além disso, a política inclui a realização de uma 
-análise de risco (due diligence) para garantir a segurança e a conformidade das aquisições realizadas.
-Essas diretrizes visam assegurar transparência, eficiência e responsabilidade nas compras da organização."
+"Política de Controle de Acesso: O acesso aos sistemas deve ser concedido conforme necessidade e revisado periodicamente."
 ```
 ---
 
