@@ -1,4 +1,4 @@
-# 🤖 AI Agent Builder - Customer Support com CrewAI
+# 🤖 AI Agent Builder - Multi-Agent Customer Support com RAG (CrewAI)
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![CrewAI](https://img.shields.io/badge/CrewAI-Multi--Agent-orange)
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
@@ -10,6 +10,7 @@ Projeto demonstrando uma arquitetura de múltiplos agentes utilizando CrewAI par
 
 ## 🚀 Funcionalidades
 
+- 📄 RAG com documentos PDF (busca semântica)
 - 🤖 Atendimento automatizado com AI Agents
 - 🧠 Interpretação de intenção do usuário
 - 🔎 Pesquisa em base de conhecimento (FAQ)
@@ -42,9 +43,12 @@ O sistema é composto por três agentes especializados:
 ml-ai-agent-builder/
 ├── agents/
 ├── config/
+├── rag/
 ├── tools/
 ├── data/
-│   └── faq.txt
+│   ├── faq.txt
+│   └── pdfs/
+├── debug/
 ├── main.py
 ├── requirements.txt
 └── README.md
@@ -138,8 +142,8 @@ A evolução do projeto visa sair de uma base estática (FAQ em texto) para uma 
 
 ---
 
-### 🔜 Versão 2 - RAG com PDFs
-- Ingestão de documentos PDF (ex: políticas, relatórios, normas)
+### ✅ Versão 2 - RAG com PDFs
+- Ingestão de documentos PDF (ex: políticas, auditorias, normas)
 - Processamento e chunking de documentos
 - Vetorização com embeddings
 - Busca semântica (Retrieval-Augmented Generation)
@@ -157,7 +161,7 @@ A evolução do projeto visa sair de uma base estática (FAQ em texto) para uma 
 - Avaliação automática de qualidade das respostas
 - Logs e observabilidade (erros, falhas e inconsistências)
 
-🚧 Projeto em evolução contínua: V2 (RAG com PDFs) e V3 (Guardrails e avaliação) em desenvolvimento.
+🚧 Projeto em evolução contínua: V3 (Guardrails, fonte e avaliação de respostas) em desenvolvimento.
 
 ---
 
