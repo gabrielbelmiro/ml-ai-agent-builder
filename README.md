@@ -149,18 +149,43 @@ A evolução do projeto visa sair de uma base estática (FAQ em texto) para uma 
 
 ---
 
-### 🔜 Versão 3 - Guardrails e Redução de Alucinação
+### ✅ Versão 3 - Guardrails e Redução de Alucinação
 - Respostas restritas ao contexto recuperado
 - Fallback para perguntas fora da base ("informação não encontrada")
 - Engenharia de prompts com regras mais rígidas
 - Citação da fonte utilizada na resposta
-- Score de confiança da resposta (alta/média/baixa)
-- Avaliação automática de qualidade das respostas
-- Logs e observabilidade (erros, falhas e inconsistências)
-
-🚧 Projeto em evolução contínua: V3 (Guardrails, fonte e avaliação de respostas) em desenvolvimento.
+- Score de confiança baseado em fontes únicas
+- Avaliação básica da qualidade da resposta
+- Logs iniciais e controle de execução
 
 ---
+
+### 🔜 Versão 4 - Interface Web + Experiência do Usuário
+- Front-end moderno com Bootstrap
+- Integração com FastAPI
+- Interface estilo Chat (similar ao ChatGPT)
+- Upload de documentos (PDF)
+- Exibição da resposta com:
+  - Fonte
+  - Score de confiança
+- Integração com CrewAI (backend)
+- Preparação para uso real por usuários
+
+---
+
+### 🔜 Versão 5 - Qualidade e Testes Automatizados
+- Testes automatizados com pytest
+- Testes por camada (unit, component, integration, e2e)
+- Testes do pipeline RAG (loader, retriever, vector store)
+- Testes de fallback e guardrails
+- Testes de source attribution (fonte)
+- Cobertura de código (pytest-cov)
+- Estrutura profissional de testes
+- Preparação para CI/CD (GitHub Actions)
+
+---
+
+🚧 Projeto em evolução contínua: V4 (Interface Web) e V5 (Qualidade e Testes) em desenvolvimento.
 
 
 ## 👨‍💻 Autor
