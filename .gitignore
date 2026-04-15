@@ -19,3 +19,6 @@ venv/
 
 # Segurança
 set_secret.py
+
+# Vector DB
+db/
