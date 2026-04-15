@@ -102,15 +102,14 @@ Contexto:
 {contexto if contexto else FALLBACK_MESSAGE}
 
 Regras:
-- Use APENAS informações presentes no contexto.
-- Responda em no máximo 2 frases.
-- NÃO adicione explicações extras.
-- NÃO interprete ou complemente o conteúdo.
-- Responda de forma objetiva, preferencialmente reutilizando o texto do contexto.
-- Se a informação não estiver presente, responda exatamente:
+- Use SOMENTE frases presentes no contexto.
+- NÃO reescreva, NÃO interprete e NÃO complemente.
+- NÃO adicione explicações.
+- Copie apenas o trecho relevante do contexto.
+- Se não encontrar exatamente no contexto, responda:
 "{FALLBACK_MESSAGE}"
 """,
-    expected_output="Resposta direta baseada no contexto, sem adição de conteúdo externo.",
+    expected_output="Resposta extraída diretamente do contexto, sem modificações.",
     agent=responder
 )
 

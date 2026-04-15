@@ -20,10 +20,10 @@ def confidence_score(docs):
     total_fontes = len(fontes_unicas)
 
     if total_fontes == 0:
-        return "baixa"
+        return "Baixa"
     elif total_fontes == 1:
-        return "alta"
+        return "Alta"
     elif total_fontes == 2:
-        return "média"
+        return "Média"
     else:
-        return "baixa"
+        return "Baixa"
